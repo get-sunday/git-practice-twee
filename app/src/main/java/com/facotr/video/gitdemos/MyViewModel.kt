@@ -13,8 +13,11 @@ class MyViewModel : ViewModel() {
         _number.value = _number.value?.plus(n)
     }
 
+
     fun reset(){
         _number.value = 0
     }
+
+    //Datas and then so a junk foods
 
 }

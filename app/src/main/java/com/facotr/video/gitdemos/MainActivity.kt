@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
@@ -16,15 +17,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
-
         var btn = findViewById<Button>(R.id.button)
+        viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        viewModel.numerLiveData.observe(this, Observer { btn.text = "$it"})
+
          btn.setOnClickListener {
-              btn.text == "${++(viewModel.number)}"
+             viewModel.add(1)
          }
 
          findViewById<Button>(R.id.button2).setOnClickListener {
-             btn.text == "${--(viewModel.number)}"
+             viewModel.add(-1)
          }
 
     }
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menuAdd){
-             viewModel.number  == 0
+             viewModel.reset()
         }
 
         return super.onOptionsItemSelected(item)
