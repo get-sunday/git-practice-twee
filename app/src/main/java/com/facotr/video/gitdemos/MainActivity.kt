@@ -13,5 +13,11 @@ class MainActivity : AppCompatActivity() {
 
         var btn = findViewById<Button>(R.id.button)
 
+
+         btn.setOnClickListener {
+              btn.setText("hello")
+         }
+
+
     }
 }
