@@ -5,23 +5,28 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
 
     private var number = 0
+
+    private lateinit var viewModel: MyViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        number = savedInstanceState?.getInt("NUM")?: 0
-        var btn = findViewById<Button>(R.id.button)
 
+        var btn = findViewById<Button>(R.id.button)
+        viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
+        viewModel.numerLiveData.observe(this, Observer { btn.text = "$it"})
 
          btn.setOnClickListener {
-              btn.setText("hello")
+             viewModel.add(1)
          }
 
          findViewById<Button>(R.id.button2).setOnClickListener {
-              btn.setText("hello -1")
+             viewModel.add(-1)
          }
 
     }
@@ -33,19 +38,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.menuAdd){
-             number == 0
+             viewModel.reset()
         }
 
         return super.onOptionsItemSelected(item)
     }
 
 
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
-        return super.onCreateOptionsMenu(menu)
-
-
-
-    }
 }
