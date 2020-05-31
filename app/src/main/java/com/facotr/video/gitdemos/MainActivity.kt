@@ -3,6 +3,7 @@ package com.facotr.video.gitdemos
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +30,16 @@ class MainActivity : AppCompatActivity() {
         outState.putInt("NUM",number)
         super.onSaveInstanceState(outState)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menuAdd){
+             number == 0
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
