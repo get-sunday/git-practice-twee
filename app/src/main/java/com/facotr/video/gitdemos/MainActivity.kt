@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
               btn.setText("hello")
          }
 
+         findViewById<Button>(R.id.button2).setOnClickListener {
+              btn.setText("hello -1")
+         }
+
+
 
 
     }
