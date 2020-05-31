@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
 
-    var number = 0
     private var _number = MutableLiveData(0)
     var numerLiveData = _number
 
