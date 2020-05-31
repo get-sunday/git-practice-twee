@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">GitDemos</string>
+    <string name="add">add</string>
+    <string name="reduce">-1</string>
+
 </resources>
