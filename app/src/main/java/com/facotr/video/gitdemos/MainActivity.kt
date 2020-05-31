@@ -6,11 +6,11 @@ import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
+    private var number = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       //So a junk foods
-
+        number = savedInstanceState?.getInt("NUM")?: 0
         var btn = findViewById<Button>(R.id.button)
 
 
@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
               btn.setText("hello -1")
          }
 
+    }
 
-
-
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putInt("NUM",number)
+        super.onSaveInstanceState(outState)
     }
 }
