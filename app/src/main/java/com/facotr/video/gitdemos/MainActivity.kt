@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
 
-    private var number = 0
+    private var numbesfsdfr = 0
 
     private lateinit var viewModel: MyViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var btns = findViewById<Button>(R.id.button) 
-        var btn = findViewById<Button>(R.id.button)
+        var btn = findViewById<Button>(R.id.text)
         viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
         viewModel.numerLiveData.observe(this, Observer { btn.text = "$it"})
 
