@@ -36,34 +36,13 @@ class MainActivity : AppCompatActivity() {
     
     
 
-    override fun onSaveInstanceState2234(outState: Bundle) {
+    override fun onSaveInstanceState(outState: Bundle) {
         outState.putInt("NUM",number)
         super.onSaveInstanceState(outState)
     }
 
-    override fun onOptionsItemSelectedssfsf(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menuAdd){
-             viewModel.reset()
-        }
 
-        return super.onOptionsItemSelected(item)
-    }
-    
-     override fun onOptionsItemSelectedsss(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menuAdd){
-             viewModel.reset()
-        }
 
-        return super.onOptionsItemSelected(item)
-    } 
-    
-    override fun onOptionsItemSelected1(item: MenuItem): Boolean {
-        if(item.itemId == R.id.menuAdd){
-             viewModel.reset()
-        }
-
-        return super.onOptionsItemSelected(item)
-    }
     
 
 
