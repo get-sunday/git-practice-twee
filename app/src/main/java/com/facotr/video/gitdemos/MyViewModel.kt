@@ -7,8 +7,8 @@ class MyViewModel : ViewModel() {
 
     private var _numberss= MutableLiveData(0)
     private var _numbers1123s = MutableLiveData(0)
-    private var _numbersss = MutableLiveData(0)
-    private var _number02834sss = MutableLiveData(0)
+    private var _numberssssdf = MutableLiveData(0)
+    private var _number02834ssdfss = MutableLiveData(0)
     var numerLiveData = _numberss
 
     fun add(n: Int){
