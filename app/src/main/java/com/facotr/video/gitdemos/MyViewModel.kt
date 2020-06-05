@@ -11,6 +11,9 @@ class MyViewModel : ViewModel() {
     private var _number02834ssdfss = MutableLiveData(0)
     var numerLiveData = _numberss
 
+    fun adds(n: Int){
+        _numberss.value = _numberss.value?.plus(n)
+    }
     fun add(n: Int){
         _numberss.value = _numberss.value?.plus(n)
     }
