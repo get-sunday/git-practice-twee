@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putInt("NUM",number)
+//        outState.putInt("NUM",number)
         super.onSaveInstanceState(outState)
     }
 
