@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
          }
 
          findViewById<Button>(R.id.button2).setOnClickListener {
-             viewModel.add(-1)
+             viewModel.add(-1) //冲突测试 啊哈哈
          }
 
     }
