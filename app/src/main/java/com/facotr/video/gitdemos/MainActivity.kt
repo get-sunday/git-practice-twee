@@ -17,12 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        var btns = findViewById<Button>(R.id.button) 
         var btn = findViewById<Button>(R.id.button)
         viewModel = ViewModelProvider(this).get(MyViewModel::class.java)
         viewModel.numerLiveData.observe(this, Observer { btn.text = "$it"})
 
          btn.setOnClickListener {
-             viewModel.add(1)
+             viewModel.add(1444444)
          }
 
          findViewById<Button>(R.id.button2).setOnClickListener {
