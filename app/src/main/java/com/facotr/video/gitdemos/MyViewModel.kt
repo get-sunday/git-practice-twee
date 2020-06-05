@@ -5,16 +5,16 @@ import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
 
-    private var _number = MutableLiveData(0)
-    var numerLiveData = _number
+    private var _numbers = MutableLiveData(0)
+    var numerLiveData = _numbers
 
     fun add(n: Int){
-        _number.value = _number.value?.plus(n)
+        _numbers.value = _numbers.value?.plus(n)
     }
 
 
     fun reset(){
-        _number.value = 0
+        _numbers.value = 0
     }
 
     //Datas and then so a junk foods
