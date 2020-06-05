@@ -26,24 +26,45 @@ class MainActivity : AppCompatActivity() {
              viewModel.add(1444444)
          }
 
+        
+        var names = "sundaysss"
          findViewById<Button>(R.id.button2).setOnClickListener {
              viewModel.add(2) //冲突测试 啊哈哈
          }
 
     }
+    
+    
 
-    override fun onSaveInstanceState(outState: Bundle) {
+    override fun onSaveInstanceState2234(outState: Bundle) {
         outState.putInt("NUM",number)
         super.onSaveInstanceState(outState)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    override fun onOptionsItemSelectedssfsf(item: MenuItem): Boolean {
         if(item.itemId == R.id.menuAdd){
              viewModel.reset()
         }
 
         return super.onOptionsItemSelected(item)
     }
+    
+     override fun onOptionsItemSelectedsss(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menuAdd){
+             viewModel.reset()
+        }
+
+        return super.onOptionsItemSelected(item)
+    } 
+    
+    override fun onOptionsItemSelected1(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menuAdd){
+             viewModel.reset()
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+    
 
 
 }
