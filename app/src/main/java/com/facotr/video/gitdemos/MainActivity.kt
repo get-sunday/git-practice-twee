@@ -39,6 +39,13 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+    }
+
+    //So a junk foods
+
     fun test() {
         //创建一个SpannableString对象
         var sStr = SpannableString("最是那一低头的温柔，像一朵水莲花不胜凉风的娇羞，道一声珍重，道一声珍重，那一声珍重里有蜜甜的忧愁");
