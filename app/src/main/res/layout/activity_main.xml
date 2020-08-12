@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
@@ -32,11 +33,27 @@
         tools:layout_editor_absoluteX="268dp"
         tools:layout_editor_absoluteY="446dp" />
 
+
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="409dp"
         android:layout_height="235dp"
+        android:visibility="invisible"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="495dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.facotr.video.gitdemos.CustomeSeekBar
+        android:id="@+id/seek"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        tools:layout_editor_absoluteX="1dp"
+        android:layout_marginLeft="15dp"
+        android:progress="100"
+        android:thumb="@android:color/transparent"
+        android:layout_marginRight="15dp"
+        tools:layout_editor_absoluteY="495dp" />
+
+
+
+</LinearLayout>

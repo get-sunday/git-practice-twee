@@ -1,2 +1,2 @@
 rootProject.name='GitDemos'
-include ':app'
+include ':app', ':FFmpegAndroid', ':phoenix-compress-video'

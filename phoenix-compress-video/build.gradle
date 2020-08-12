@@ -1,0 +1,55 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
+// JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group='com.github.get-sunday'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi-v7a','armeabi'
+            //abiFilters 'armeabi-v7a', "arm64-v8a"
+            //abiFilters 'armeabi-v7a', 'armeabi', "arm64-v8a", "x86"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation "junit:junit:${junitVersion}"
+//    androidTestImplementation "com.android.support.test:runner:${testRunnerVersion}"
+//    androidTestImplementation "com.android.support.test.espresso:espresso-core:${testEspressoVersion}"
+
+    implementation "com.github.guoxiaoxing:phoenix-core:$rootProject.ext.phoenixCoreVersion"
+//    implementation project(':phoenix-core')
+}
+
+//publish {
+//    userOrg = 'guoxiaoxing'
+//    groupId = 'com.github.guoxiaoxing'
+//    artifactId = 'phoenix-compress-video'
+//    publishVersion = "$rootProject.ext.phoenixVerson"
+//    desc = 'The one-stop solution for image/video selection, editing and compression on the Android platform.'
+//    website = 'https://github.com/guoxiaoxing/phoenix'
+//}
